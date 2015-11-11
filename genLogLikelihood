@@ -1,0 +1,7 @@
+export MAHOUT_HOME=/Users/jblue/mahout-distribution-0.9
+$MAHOUT_HOME/bin/mahout itemsimilarity  \
+--input  ml_input_file \
+--output output \
+--similarityClassname SIMILARITY_LOGLIKELIHOOD  \
+--booleanData TRUE  \
+--tempDir temp
