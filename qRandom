@@ -1,0 +1,14 @@
+### recommend with dithering ####
+### run command multiple times to generate different resutls ###
+curl -XGET 'localhost:9200/finance/stock/_search?pretty' -d '
+{
+  "query": {
+    "function_score": {
+      "query": { "match": { "indicators":"125 10456 349"} },
+      "functions":[ {"random_score": { } } ],
+      "score_mode":"sum"
+    }
+  },
+  "fields":["_id","name","symbol","sector"],
+  "size":"10"
+}'

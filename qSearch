@@ -1,0 +1,4 @@
+curl -XGET 'localhost:9200/finance/stock/_search?pretty' -d '{
+    "query": { "match":{"name":"apple"} } ,
+    "fields":["_id","name","symbol","sector"]
+}'
